@@ -43,8 +43,8 @@ function GetSignedData(FileBuffer, ByteRange) {
 
     // Extract the specified range from the buffer
     let ByteRangeBuffer = Buffer.concat([
-        FileBuffer.slice(ByteRange[0], ByteRange[0] + ByteRange[1]),
-        FileBuffer.slice(ByteRange[2], ByteRange[2] + ByteRange[3])
+        FileBuffer.slice(0, ByteRange[0] + ByteRange[1]),
+        FileBuffer.slice(ByteRange[2] - 1, (ByteRange[2] - 1) + ByteRange[3])
     ]).toString('binary');
 
     return (Buffer.from(ByteRangeBuffer, 'hex')).toString('binary');
@@ -55,46 +55,15 @@ function GetMessageFromSignature(Signature) {
     return forge.pkcs7.messageFromAsn1(p7Asn1);
 }
 
-function VerifyDataIntegrity(SignatureData, SignedData, Message) {
-
-    if (!Message || !Message.certificates || !Message.certificates.length) { return }
-
-
-    const {
-        rawCapture: {
-            authenticatedAttributes: attrs,
-            digestAlgorithm,
-        },
-    } = Message;
-
-
-    const hashAlgorithmOid = forge.asn1.derToOid(digestAlgorithm);
-    const hashAlgorithm = forge.pki.oids[hashAlgorithmOid].toLowerCase();
-
-
-    const messageDigestAttr = forge.pki.oids.messageDigest;
-    const fullAttrDigest = attrs.find((attr) => forge.asn1.derToOid(attr.value[0].value) === messageDigestAttr);
-    const attrDigest = fullAttrDigest.value[1].value[0].value;
-    const dataDigest = forge.md[hashAlgorithm].create().update(SignedData.toString('binary')).digest().getBytes();
-
-
-    const integrity = dataDigest === attrDigest;
-
-    return integrity;
-
-}
-
 function GetCertificateData(FileBuffer, ByteRange) {
     const SignatureData = GetSignatureData(FileBuffer, ByteRange);
     const SignedData = GetSignedData(FileBuffer, ByteRange);
     const Message = GetMessageFromSignature(SignatureData);
 
-
-    const integrity = VerifyDataIntegrity(SignatureData, SignedData, Message);
     const Details = ExtractCertificateDetails(Message.certificates[0]);
 
-    console.log(Details);
-    console.log(integrity);
+    return Details;
+
 }
 
 function MapAttributes(attrs) {
