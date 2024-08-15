@@ -8,7 +8,7 @@ function ExtractCertificateData(FileBuffer) {
     const CertificateDataList = ByteRangeList.map((ByteRange) => {
         const CertificateData = GetCertificateData(FileBuffer, ByteRange);
         return CertificateData;
-    }).filter(data => data !== undefined);
+    });
 
     return CertificateDataList;
 }
@@ -33,17 +33,20 @@ function GetSignaturesByteRange(FileBuffer) {
     return ByteRangeList;
 }
 
-function getSignatureData(FileBuffer, ByteRange) {
+function GetSignatureData(FileBuffer, ByteRange) {
     // Extract the specified range from the buffer
     let ByteRangeBuffer = FileBuffer.slice(ByteRange[1] + 1, ByteRange[2] - 1).toString('binary');
+    return (Buffer.from(ByteRangeBuffer, 'hex')).toString('binary');
+}
 
-    // Remove the zeroes from the end of the buffer
-    let EndIndex = ByteRangeBuffer.length;
-    while (EndIndex > 0 && ByteRangeBuffer[EndIndex - 1] === 0x30) {
-        EndIndex--;
-    }
+function GetSignedData(FileBuffer, ByteRange) {
 
-    ByteRangeBuffer = ByteRangeBuffer.slice(0, EndIndex);
+    // Extract the specified range from the buffer
+    let ByteRangeBuffer = Buffer.concat([
+        FileBuffer.slice(ByteRange[0], ByteRange[0] + ByteRange[1]),
+        FileBuffer.slice(ByteRange[2], ByteRange[2] + ByteRange[3])
+    ]).toString('binary');
+
     return (Buffer.from(ByteRangeBuffer, 'hex')).toString('binary');
 }
 
@@ -52,32 +55,67 @@ function GetMessageFromSignature(Signature) {
     return forge.pkcs7.messageFromAsn1(p7Asn1);
 }
 
+function VerifyDataIntegrity(SignatureData, SignedData, Message) {
+
+    if (!Message || !Message.certificates || !Message.certificates.length) { return }
+
+
+    const {
+        rawCapture: {
+            authenticatedAttributes: attrs,
+            digestAlgorithm,
+        },
+    } = Message;
+
+
+    const hashAlgorithmOid = forge.asn1.derToOid(digestAlgorithm);
+    const hashAlgorithm = forge.pki.oids[hashAlgorithmOid].toLowerCase();
+
+
+    const messageDigestAttr = forge.pki.oids.messageDigest;
+    const fullAttrDigest = attrs.find((attr) => forge.asn1.derToOid(attr.value[0].value) === messageDigestAttr);
+    const attrDigest = fullAttrDigest.value[1].value[0].value;
+    const dataDigest = forge.md[hashAlgorithm].create().update(SignedData.toString('binary')).digest().getBytes();
+
+
+    const integrity = dataDigest === attrDigest;
+
+    return integrity;
+
+}
+
 function GetCertificateData(FileBuffer, ByteRange) {
-    const SignatureData = getSignatureData(FileBuffer, ByteRange);
+    const SignatureData = GetSignatureData(FileBuffer, ByteRange);
+    const SignedData = GetSignedData(FileBuffer, ByteRange);
     const Message = GetMessageFromSignature(SignatureData);
 
-    const Certificate = Message.certificates[0];
 
-    if (!Certificate) { return }
+    const integrity = VerifyDataIntegrity(SignatureData, SignedData, Message);
+    const Details = ExtractCertificateDetails(Message.certificates[0]);
 
-    return ExtractCertificateDetails(Certificate);
+    console.log(Details);
+    console.log(integrity);
 }
 
 function MapAttributes(attrs) {
-    return attrs.reduce((agg, { name, value }) => {
-        if (name) {
-            agg[name] = value;
-        }
-        return agg;
+    return attrs.reduce((item, { name, value }) => {
+        if (name) { item[name] = value }
+        return item;
     }, {});
 }
 
 function ExtractCertificateDetails(Certificate) {
+
+    if (!Certificate) { return }
+
+    const isExpired = Certificate.validity.notAfter.getTime() < Date.now() || Certificate.validity.notBefore.getTime() > Date.now();
+
     return {
         issuedBy: MapAttributes(Certificate.issuer.attributes),
         issuedTo: MapAttributes(Certificate.subject.attributes),
         validityPeriod: Certificate.validity,
         pemCertificate: forge.pki.certificateToPem(Certificate),
+        isExpired: isExpired
     };
 }
 

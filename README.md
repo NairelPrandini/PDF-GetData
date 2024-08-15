@@ -24,57 +24,11 @@ This Node.js script extracts certificate data from a PDF file. The script reads 
     node index.js
     ```
 
-## Code Explanation
-
 ### `ExtractCertificateData(FileBuffer)`
 
 Extracts certificate data from the provided PDF buffer.
 
 - **Input**: `FileBuffer` - A buffer containing the PDF data.
-- **Output**: An array of certificate data objects.
-
-### `GetSignaturesByteRange(FileBuffer)`
-
-Finds and returns the byte ranges for signatures within the PDF.
-
-- **Input**: `FileBuffer` - A buffer containing the PDF data.
-- **Output**: An array of byte ranges.
-
-### `getSignatureData(FileBuffer, ByteRange)`
-
-Extracts the binary data for a signature from the byte range.
-
-- **Input**: `FileBuffer` - A buffer containing the PDF data.
-- **Input**: `ByteRange` - An array specifying the byte range.
-- **Output**: The binary signature data.
-
-### `GetMessageFromSignature(Signature)`
-
-Converts the signature into a PKCS7 message using `node-forge`.
-
-- **Input**: `Signature` - The binary signature data.
-- **Output**: The PKCS7 message object.
-
-### `GetCertificateData(FileBuffer, ByteRange)`
-
-Gets certificate details from the provided byte range.
-
-- **Input**: `FileBuffer` - A buffer containing the PDF data.
-- **Input**: `ByteRange` - An array specifying the byte range.
-- **Output**: An object with certificate details.
-
-### `MapAttributes(attrs)`
-
-Maps certificate attributes to a key-value object.
-
-- **Input**: `attrs` - An array of attribute objects.
-- **Output**: A key-value object representing the attributes.
-
-### `ExtractCertificateDetails(Certificate)`
-
-Extracts and formats certificate details.
-
-- **Input**: `Certificate` - A PKCS7 certificate object.
 - **Output**: An object containing the issuer, subject, validity period, and PEM-encoded certificate.
 
 ## Example

@@ -1,0 +1,354 @@
+{
+  version: 2,
+  serialNumber: '00d86956604ac44872',
+  signatureOid: '1.2.840.113549.1.1.11',
+  signature: 'Á;\x19c;ò\'\\\x0F8æÇèàºäJ©¹\t\x18«8k\x13\x048ÒU*\x84çÐLþ!#÷IntI\x85í\x8FÓ\x1DHbòîW>É@\x85ZÆÀS/\x9Az°kè\f\x83¸¹My
+}/\x19wS;ãÕÑB¡\x04ªÖ\x8Eí/ø»\x80\x1D\x06\bR7øIþ°Ý¬\x1A¹V\x01Wæ9¦\x8E%\x11¨4wãR\x9F9\x7F4°\x9Bi5Ç\x1EË\x97[A¢À`1I\x12ýõA*\x9D%Øq\x02\x04ó_0BÍUs¾2Ü2Ë^ÿ2±qh%\x858®5Q@\x89\x03y´7Ñ;\x9A²\x1Eî@|;T\x17\x15\x9FÏ\x10\x8A\x11\x1Ag\x95yR\x04YÈ¡Â¢\x1AúB\x1E\x92
+]Ær\\\x94¹ËDÍ@ËP6\x8A\x14\\þY\x0F\x89\x86§móG²½×\f\x05\x1Db&P¡\x96ÿß\x169$â\x86)Åä£iæ4õ\x1Cë¢°¢\x13Ä³«s\x04\x97\x8F¿é\x7FVÚ÷\x12\x19ÍÈ²h\x1EV\x0E"½u\x1Bi©ô\x17\x80!\x1DWÑU\x8B\x86>\x109\x1Am#G=\x06D\x0EîþMî\x0E99\x9D7Mrë¦7È%ce\x05\x9CQÕ\fw-ù\x04o\x94q\fñÐQÕ\x07[\x00ý|ÎFí¼`\x06 äÑ×Jõübë\x18?Ä\x13\x02[ÝwEj\x13\x04F\x0E8ð1ú\x8Fí¡8Sª³\x9B=»ÃÕ*\x89\x1B\x87A\b\x98\x80à êÈÛN5¹l²\x94j\x1FÍ"è\x1A9Mkof~É4Óó9Ò\x14À©Ä@êñÈÆ9\x8C\x06Dk\x07Î\tâ\x9C×H\x11¬½ê9¶«®+\\O\x84½~\x14\x06\x01\x8CVz\x99\x9E±è
+]\x9AÂíí¦ä¶ºÏeø\x0EC\x1F\x94Ý\n' +
+    'B¬¾¨%úÂ\x86D',
+  siginfo: { algorithmOid: '1.2.840.113549.1.1.11', parameters: {}
+},
+  validity: {
+    notBefore: 2023-11-20T18: 10: 35.000Z,
+    notAfter: 2024-11-19T18: 10: 35.000Z
+},
+  issuer: {
+    getField: [Function (anonymous)
+],
+    addField: [Function (anonymous)
+],
+    attributes: [
+    [Object
+    ],
+    [Object
+    ],
+    [Object
+    ],
+    [Object
+    ]
+],
+    hash: 'c30231adfb38e925de68ba7bf86e9d183e991a5f'
+},
+  subject: {
+    getField: [Function (anonymous)
+],
+    addField: [Function (anonymous)
+],
+    attributes: [
+    [Object
+    ]
+],
+    hash: '16042a0daacfaad71f8e76e691132ab0dfa24539'
+},
+  extensions: [
+{
+      id: '2.5.29.17',
+      critical: false,
+      value: '0\x81\x8F 8\x06\x05`L\x01\x03\x01 /\x04-310119900780086198800000000000000000000000000 \x17\x06\x05`L\x01\x03\x06 \x0E\x04\f000000000000 \x1E\x06\x05`L\x01\x03\x05 \x15\x04\x130000000000000000000\x81\x1Ahenriquemorita@outlook.com',
+      name: 'subjectAltName',
+      altNames: [Array
+    ]
+},
+{
+      id: '2.5.29.19',
+      critical: false,
+      value: '0\x00',
+      name: 'basicConstraints',
+      cA: false
+},
+{
+      id: '2.5.29.35',
+      critical: false,
+      value: "0\x16\x80\x14<*h\\\x99\x84{PP·>A\x1A ­H7aµ'",
+      name: 'authorityKeyIdentifier'
+},
+{
+      id: '2.5.29.32',
+      critical: false,
+      value: '0C0A\x06\x06`L\x03\x02\x01\x010705\x06\b+\x06\x01\x05\x05\x07\x02\x01\x16)http: //repo.iti.br/docs/DPCacfGovBrv1.pdf',
+      name: 'certificatePolicies'
+},
+{
+      id: '2.5.29.31',
+      critical: false,
+      value: '0907 5 3\x861http: //repo.iti.br/lcr/public/acf/LCRacfGovBr.crl',
+      name: 'cRLDistributionPoints'
+},
+{
+      id: '2.5.29.15',
+      critical: true,
+      value: '\x03\x02\x07\x80',
+      name: 'keyUsage',
+      digitalSignature: true,
+      nonRepudiation: false,
+      keyEncipherment: false,
+      dataEncipherment: false,
+      keyAgreement: false,
+      keyCertSign: false,
+      cRLSign: false,
+      encipherOnly: false,
+      decipherOnly: false
+},
+{
+      id: '2.5.29.37',
+      critical: false,
+      value: '0\x14\x06\b+\x06\x01\x05\x05\x07\x03\x02\x06\b+\x06\x01\x05\x05\x07\x03\x04',
+      name: 'extKeyUsage',
+      clientAuth: true,
+      emailProtection: true
+},
+{
+      id: '2.5.29.14',
+      critical: false,
+      value: '\x04\x14&¼Â¢\x0FÎê÷.é\x1Ca¿\x8D%\x92 ðõÐ',
+      name: 'subjectKeyIdentifier',
+      subjectKeyIdentifier: '26bcc2a20fceeaf72ee91c61bf8d259220f0f5d0'
+},
+{
+      id: '1.3.6.1.5.5.7.1.1',
+      critical: false,
+      value: '0: 08\x06\b+\x06\x01\x05\x05\x070\x02\x86,http: //repo.iti.br/docs/Cadeia_GovBr-der.p7b',
+      name: 'authorityInfoAccess'
+}
+],
+  publicKey: {
+    n: BigInteger { data: [Array
+    ], t: 74, s: 0
+},
+    e: BigInteger { data: [Array
+    ], t: 1, s: 0
+},
+    encrypt: [Function (anonymous)
+],
+    verify: [Function (anonymous)
+]
+},
+  md: null,
+  setSubject: [Function (anonymous)
+],
+  setIssuer: [Function (anonymous)
+],
+  setExtensions: [Function (anonymous)
+],
+  getExtension: [Function (anonymous)
+],
+  sign: [Function (anonymous)
+],
+  verify: [Function (anonymous)
+],
+  isIssuer: [Function (anonymous)
+],
+  issued: [Function (anonymous)
+],
+  generateSubjectKeyIdentifier: [Function (anonymous)
+],
+  verifySubjectKeyIdentifier: [Function (anonymous)
+],
+  signatureParameters: {},
+  tbsCertificate: {
+    tagClass: 0,
+    type: 16,
+    constructed: true,
+    composed: true,
+    value: [
+    [Object
+    ],
+    [Object
+    ],
+    [Object
+    ],
+    [Object
+    ],
+    [Object
+    ],
+    [Object
+    ],
+    [Object
+    ],
+    [Object
+    ]
+]
+}
+}
+{
+  version: 2,
+  serialNumber: '17b8b4f8b009fa4e',
+  signatureOid: '1.2.840.113549.1.1.13',
+  signature: '.m|¹©y¯pSÑ\x00+´H¬ì¥Æ\x13j)\x05é\n' +
+    '\x1Eí\x80ð~\x82\x8D\x8DDå$úÅÕ8
+}Ö0\x8F¾\x89\x8D\x13 9w×\x88¡[\x99cK{
+16\x02Ü\x87AÔ$vÌ\x92èÿ\x18)yÂ~X6\x12\x8D\x9F+ÄìýâäIä"*\x83êÚ\x88-³¦E^\x19\x04BêÚW\x11{\x8FÜ*\x8C\t\x1AÆ,\x97xáu\r\x0BòYá{¨ã!mj×¿\x7Fë¨\x1A5(\x90ÌI!¢ù¦\x90T3ÕÀð?òM´\x10\x14cH$ÂA\x13\x1EÎÂ:ø\x99÷Á\t+¥A«ÓÍT\x80¼d\'¯\\\x02Y\x97\x834+C\x89P¹ô\x0Ed\r¾eO\x8F\x1F¡3Î\x99:BKEÍ[\x966i¶#+Ù-é-Ä\x1D\x13Ac\x91+Õ-Ó\x9BáÜN\x93ç7v|\b%2(òï\x8A\x06M\x91ÇFÜ.\x8BzCvà¡Ãr|¨ú\x13¤ D\x95Ãgla`ñ\x92«Ê\x8EôÕ{\x9C\x9Fà±DyJ\x9C\x02¨+\x82\x17¸F\x18\x96z¥6Ð·µ\x0Fõàwï1r\x9FÛ÷\x97y\x89,Þ»\x84´Çý\'-\x85Ý\tàdU=\x17\x95ª\x82W\x90\x1E4\x81Ê4Ó/53°ï\x84f×Øgk·÷\x1C\x81äÅ üò<öiûo¹½9³VGVÝSºÏAæ\x04\x06Yò¦\x97ò\x0F5Tí"4µ²\x05áÇ\x18\x86£\x05\x1F\x1B\x19Ûf\x94\x1AC¾©jo\x19;Ø©ÀáT¡~\x88~\x9Câwá\x03\x04Òá=\x7FøIYøS6Uµ\x80,ºl+Ñ\x05îiIq\x90WZ¢\x8Bn\x9C´!cwu\x81yÕ8\x84\x8Aù\x84\x11~On
+]á=\x8E\x81¬A\\\x98\x81Z\\Ö8l\x81ób¢\x83S\n' +
+    'ÂX\x9F',
+  siginfo: { algorithmOid: '1.2.840.113549.1.1.13', parameters: {}
+},
+  validity: {
+    notBefore: 2024-03-01T17: 43: 58.000Z,
+    notAfter: 2025-03-01T17: 43: 58.000Z
+},
+  issuer: {
+    getField: [Function (anonymous)
+],
+    addField: [Function (anonymous)
+],
+    attributes: [
+    [Object
+    ],
+    [Object
+    ],
+    [Object
+    ],
+    [Object
+    ]
+],
+    hash: '0e70c6258916d879d8d9ba0d1b53e74c2d2449d6'
+},
+  subject: {
+    getField: [Function (anonymous)
+],
+    addField: [Function (anonymous)
+],
+    attributes: [
+    [Object
+    ],
+    [Object
+    ],
+    [Object
+    ],
+    [Object
+    ]
+],
+    hash: '9821f029611b1893a3e2125315866a4ba2378cf9'
+},
+  extensions: [
+{
+      id: '2.5.29.14',
+      critical: false,
+      value: '\x04\x14Þ§ÞE\x87¶×Ëô¾dò¶\x0Fq\x89.«\x17²',
+      name: 'subjectKeyIdentifier',
+      subjectKeyIdentifier: 'dea7de4587b6d7cbf4be64f2b60f71892eab17b2'
+},
+{
+      id: '2.5.29.35',
+      critical: false,
+      value: '0\x16\x80\x14®×ÀÃ÷0lââ¨¼(\x8Fg¡ú\x00ò3N',
+      name: 'authorityKeyIdentifier'
+},
+{
+      id: '2.5.29.17',
+      critical: false,
+      value: '0\x81¨\x81\x13conte@alumni.usp.br B\x06\x05`L\x01\x03\x01 9\x0472407197060948973900000000000000000000000000000000000000 \x17\x06\x05`L\x01\x03\x06 \x0E\x04\f000000000000 4\x06\x05`L\x01\x03\x05 +\x04)00000000000000000000000000000000000000000',
+      name: 'subjectAltName',
+      altNames: [Array
+    ]
+},
+{
+      id: '2.5.29.19',
+      critical: true,
+      value: '0\x00',
+      name: 'basicConstraints',
+      cA: false
+},
+{
+      id: '1.3.6.1.5.5.7.1.1',
+      critical: false,
+      value: '0\x81\x870G\x06\b+\x06\x01\x05\x05\x070\x02\x86;https: //repositorio.icpedu.rnp.br/ac-pessoa/ac-pessoa-chain0<\x06\b+\x06\x01\x05\x05\x070\x01\x860https://pessoal.icpedu.rnp.br/public/ocsp/status',
+      name: 'authorityInfoAccess'
+},
+{
+      id: '2.5.29.31',
+      critical: false,
+      value: '0>0< : 8\x866https: //pessoal.icpedu.rnp.br/public/crl/download/last',
+      name: 'cRLDistributionPoints'
+},
+{
+      id: '2.5.29.32',
+      critical: false,
+      value: '0[
+        0Y\x06\n' +
+        '+\x06\x01\x04\x01ü|\x01\x01\x040K0I\x06\b+\x06\x01\x05\x05\x07\x02\x01\x16=https: //repositorio.icpedu.rnp.br/ac-pessoa/dpc-ac-pessoa.pdf',
+      name: 'certificatePolicies'
+    },
+    {
+      id: '2.5.29.15',
+      critical: true,
+      value: '\x03\x02\x05à',
+      name: 'keyUsage',
+      digitalSignature: true,
+      nonRepudiation: true,
+      keyEncipherment: true,
+      dataEncipherment: false,
+      keyAgreement: false,
+      keyCertSign: false,
+      cRLSign: false,
+      encipherOnly: false,
+      decipherOnly: false
+    },
+    {
+      id: '2.5.29.37',
+      critical: true,
+      value: '0\x14\x06\b+\x06\x01\x05\x05\x07\x03\x02\x06\b+\x06\x01\x05\x05\x07\x03\x04',
+      name: 'extKeyUsage',
+      clientAuth: true,
+      emailProtection: true
+    }
+],
+  publicKey: {
+    n: BigInteger { data: [Array
+        ], t: 74, s: 0
+    },
+    e: BigInteger { data: [Array
+        ], t: 1, s: 0
+    },
+    encrypt: [Function (anonymous)
+    ],
+    verify: [Function (anonymous)
+    ]
+},
+  md: null,
+  setSubject: [Function (anonymous)
+],
+  setIssuer: [Function (anonymous)
+],
+  setExtensions: [Function (anonymous)
+],
+  getExtension: [Function (anonymous)
+],
+  sign: [Function (anonymous)
+],
+  verify: [Function (anonymous)
+],
+  isIssuer: [Function (anonymous)
+],
+  issued: [Function (anonymous)
+],
+  generateSubjectKeyIdentifier: [Function (anonymous)
+],
+  verifySubjectKeyIdentifier: [Function (anonymous)
+],
+  signatureParameters: {},
+  tbsCertificate: {
+    tagClass: 0,
+    type: 16,
+    constructed: true,
+    composed: true,
+    value: [
+        [Object
+        ],
+        [Object
+        ],
+        [Object
+        ],
+        [Object
+        ],
+        [Object
+        ],
+        [Object
+        ],
+        [Object
+        ],
+        [Object
+        ]
+    ]
+}
